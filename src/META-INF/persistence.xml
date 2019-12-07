@@ -17,4 +17,6 @@
             <property name="transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory"/>
         </properties>
     </persistence-unit>
+    
+    
 </persistence>

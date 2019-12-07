@@ -1,16 +1,26 @@
 package com.stefanini.hackaton.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Personagem")
-@NamedQueries({ @NamedQuery(name = "Personagem.getAll", query = "SELECT p FROM Personagem p") })
+@NamedQueries({ 
+	@NamedQuery(name = "Personagem.getAll", 
+			query = "SELECT p FROM Personagem p") 
+	})
 public class Personagem implements Serializable {
 
 	/**
@@ -18,16 +28,28 @@ public class Personagem implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
 	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(name="nome")
 	private String nome;
+	
+	@Column(name="velocidade")
 	private Integer velocidade;
+	
+	@Column(name="aceleracao")
 	private Integer aceleracao;
+	
 	private Integer peso;
 	private Integer manobra;
 	private Integer tracao;
 	private Integer turbo;
-
+	
+	
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name = "idPersonagem")
+	private List<Jogador> jogadores;
 	
 	
 	public Integer getId() {
@@ -92,6 +114,14 @@ public class Personagem implements Serializable {
 
 	public void setTurbo(Integer turbo) {
 		this.turbo = turbo;
+	}
+
+	public List<Jogador> getJogadores() {
+		return jogadores;
+	}
+
+	public void setJogadores(List<Jogador> jogadores) {
+		this.jogadores = jogadores;
 	}
 
 }

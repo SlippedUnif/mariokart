@@ -1,6 +1,7 @@
 package com.stefanini.hackaton.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class PersonagemDto implements Serializable {
 
@@ -17,6 +18,8 @@ public class PersonagemDto implements Serializable {
 	private Integer manobra;
 	private Integer tracao;
 	private Integer turbo;
+	
+	private List<JogadorDto> jogadores; 
 	
 	
 
@@ -82,6 +85,14 @@ public class PersonagemDto implements Serializable {
 
 	public void setTurbo(Integer turbo) {
 		this.turbo = turbo;
+	}
+
+	public List<JogadorDto> getJogadores() {
+		return jogadores;
+	}
+
+	public void setJogadores(List<JogadorDto> jogadores) {
+		this.jogadores = jogadores;
 	}
 
 }
