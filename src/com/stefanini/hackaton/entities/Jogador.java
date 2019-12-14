@@ -9,10 +9,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Jogador")
+@NamedQueries({ 
+	@NamedQuery(name = "Jogador.getLogin", 
+			query = "SELECT j FROM Jogador j WHERE j.nickname = :nickname AND j.senha = :senha"),
+	@NamedQuery(name = "Jogador.getUser", 
+	query = "SELECT j FROM Jogador j WHERE j.nickname = :nickname")
+	})
+//select p.*
+//from mariokart.personagem as p 
+//join mariokart.jogador as j
+//where p.id = j.idPersonagem and j.id = 1
+
+//SELECT E FROM mariokart.jogador WHERE jogador.nickname = e.getNickname AND jogador.senha = w.getSenha
 public class Jogador implements Serializable {
 
 	/**

@@ -19,6 +19,7 @@ import com.stefanini.hackaton.service.PersonagemService;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PersonagemApi {
+	
 
 	@Inject
 	private PersonagemService personagemService;

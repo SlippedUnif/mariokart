@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
 import com.stefanini.hackaton.dto.PersonagemDto;
 import com.stefanini.hackaton.entities.Personagem;
@@ -17,19 +19,19 @@ public class PersonagemService {
 	PersonagemParserDTO parser;
 	
 	@Inject
-	JogadorParserDTO jogadorParser;
-	
-	@Inject
 	PersonagemDAO personagemDao;
 
-
+	@GET
+	@Path("/personagem")
+	@Transactional
 	public List<PersonagemDto> listar() {
 		return parser.toDTO(personagemDao.list());
 	}
 
-
+	@GET
+	@Path("/personagem/{}")
 	public PersonagemDto obter(Integer id) {
-		return parser.toDTO(personagemDao.findById(id));
+		return parser.toDTO(personagemDao.findByIdPersonagem(id));
 	}
 
 
@@ -63,9 +65,14 @@ public class PersonagemService {
 
 	@Transactional
 	public PersonagemDto listarPorPersonagem(Integer id) {
-		Personagem personagem = personagemDao.findById(id);
-		personagem.getJogadores();
-		return parser.toDTO(personagem);
+		Personagem personagem = personagemDao.findByIdPersonagem(id);
+		return parser.toDTOPersonagem(personagem);
+	}
+	
+	@Transactional
+	public PersonagemDto getEspecificPersonagem(Integer id) {
+		Personagem personagem = personagemDao.findByIdPersonagem(id);
+		return parser.toDTOPersonagem(personagem);
 	}
 	
 	

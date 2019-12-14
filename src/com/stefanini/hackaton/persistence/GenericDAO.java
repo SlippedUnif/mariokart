@@ -11,6 +11,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.transaction.Transactional;
 
+import com.fasterxml.jackson.databind.deser.impl.ExternalTypeHandler.Builder;
+
 public class GenericDAO<P, E extends Serializable> {
 
 	@PersistenceContext(unitName = "mariokartUnit")
@@ -34,7 +36,7 @@ public class GenericDAO<P, E extends Serializable> {
 
 		this.clazz = (Class<E>) parametrizedType.getActualTypeArguments()[1];
 	}
-
+	@Transactional
 	public List<E> list() {
 		CriteriaBuilder builder = em.getCriteriaBuilder();
 		CriteriaQuery<E> query = builder.createQuery(clazz);
@@ -42,7 +44,8 @@ public class GenericDAO<P, E extends Serializable> {
 		List<E> resultList = em.createQuery(query).getResultList();
 		return resultList;
 	}
-
+	
+	@Transactional
 	public E findById(P p) {
 		return em.find(clazz, p);
 	}

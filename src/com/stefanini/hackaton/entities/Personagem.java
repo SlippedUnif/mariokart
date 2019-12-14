@@ -19,7 +19,9 @@ import javax.persistence.Table;
 @Table(name = "Personagem")
 @NamedQueries({ 
 	@NamedQuery(name = "Personagem.getAll", 
-			query = "SELECT p FROM Personagem p") 
+			query = "SELECT p FROM Personagem p"),
+	@NamedQuery(name = "Personagem.getEspecificPersonagem", 
+	query = "SELECT p FROM Personagem p WHERE p.id = :idPersonagem")
 	})
 public class Personagem implements Serializable {
 

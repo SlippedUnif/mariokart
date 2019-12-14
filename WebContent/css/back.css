@@ -1,0 +1,18 @@
+.back{
+	background: url("../pictures/Mario-Kart-Wallpaper.jpg");
+	background-size: cover;
+}
+.back-log
+{
+	background: url("../pictures/Mario-Kart-Log.jpg");
+	background-size: cover;
+	background: rgba(0, 0, 0, 0.7);
+	top: -100px;
+	
+}
+.h1{
+	color: #FFFFFF;
+}
+.small{
+	background-size: cover;
+}

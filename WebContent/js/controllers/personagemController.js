@@ -3,7 +3,7 @@ angular.module("mariokart").controller("PersonagemController",
 
 PersonagemController.$inject = [ '$scope', 'PersonagemService' ];
 
-function PersonagemController($scope, PersonagemService) {
+function PersonagemController($scope, PersonagemService) {	
 	var vm = this;
 	vm.service = PersonagemService;
 	vm.personagens = [];
@@ -19,4 +19,10 @@ function PersonagemController($scope, PersonagemService) {
 			vm.message = "Aconteceu um problema: " + data;
 		});
 	};
+
+	
 }
+
+
+
+

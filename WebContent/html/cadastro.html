@@ -1,0 +1,43 @@
+<div class="page-container back-log col-md-4" ng-controller="cadastroController as Cc">
+    <form>
+      <h1 class="h1">Escolha seu personagem</h1>
+      <input type="text" name="login" class="Name" placeholder="LOGIN" id="inputUser">
+      <input type="password" name="password" class="Address" placeholder="PASSWORD" id="inputPassword">
+      <br>
+      <br>
+      <div >
+        <label class="w-25 p-3">
+            <input class="small" type="radio" name="test" value="1"  id="inputIdPersonagem" >
+          <img class="mw-100" src="./pictures/1.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="2"  id="inputIdPersonagem" >
+          <img class="mw-100" src="./pictures/2.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="3" id="inputIdPersonagem"  >
+          <img class="mw-100" src="./pictures/3.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="4" id="inputIdPersonagem"  >
+          <img class="mw-100" src="./pictures/4.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="5" id="inputIdPersonagem" >
+          <img class="mw-100" src="./pictures/5.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="6" id="inputIdPersonagem"  >
+          <img class="mw-100" src="./pictures/6.png">
+        </label>
+        <label class="w-25 p-3">
+          <input class="small" type="radio" name="test" value="7" id="inputIdPersonagem"  >
+          <img class="mw-100" src="./pictures/7.png">
+        </label>
+      </div>
+      <button type="submit" value="Add" name="submit" ng-click="Cc.jogadorPost()">Registrar</button>
+      <button type="submit" value="Add" name="submit" ng-click="Cc.sair()">Sair</button>
+      <br>
+      <br>
+    </form>
+  </div>

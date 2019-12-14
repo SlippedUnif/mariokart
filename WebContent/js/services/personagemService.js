@@ -1,7 +1,8 @@
-angular.module("mariokart").factory("PersonagemService", function ($http) {
+angular.module("mariokart").factory("personagemService", function ($http) {
 	var baseUrl = 'http://localhost:8080/mario-kart-desafio-final/personagem';
 	var _getPersonagens = function () {
-		return $http.get(baseUrl);
+		const retorno = $http.get(baseUrl);
+		return retorno;
 	};
 
 	return {

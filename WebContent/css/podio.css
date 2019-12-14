@@ -1,0 +1,61 @@
+.imgPodio{
+    align-items: center;
+    text-align: center;
+    height: 70%;
+    padding-top: 0%;
+}
+.imgPodio2{
+    position:relative;
+    top: -600px;
+}
+.um{
+    position:relative;
+     left:33%;
+      top:30px; 
+    z-index: 1;
+}
+.dois{
+    position:relative;
+     right:8%;
+      top:70px; 
+    z-index: 1;
+}
+.tres{
+    position:relative;
+     right:1%;
+      top:80px; 
+    z-index: 1;
+}
+.quatro{
+    position:relative;
+     left:5%;
+      bottom:130px; 
+    z-index: 1;
+}
+.cinco{
+    position:relative;
+     left:39%;
+      bottom:100px; 
+    z-index: 1;
+}
+.seis{
+    position:relative;
+     right:65%;
+      bottom:80px; 
+    z-index: 1;
+}
+.sete{
+    position:relative;
+     left:53%;
+      bottom:200px; 
+    z-index: 1;
+}
+.index{
+    top: 1px;
+    height: 1px;
+    border: blanchedalmond;
+    border-radius: 5px;
+}
+.label{
+    height: 50%;
+}
